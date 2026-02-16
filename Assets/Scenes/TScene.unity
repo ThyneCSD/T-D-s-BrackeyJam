@@ -447,6 +447,7 @@ GameObject:
   - component: {fileID: 321479429}
   - component: {fileID: 321479430}
   - component: {fileID: 321479431}
+  - component: {fileID: 321479432}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -649,6 +650,20 @@ MonoBehaviour:
   healthDepletionSpeed: 0.015
   healthImage: {fileID: 2028847819}
   oxygenImage: {fileID: 1580372017}
+--- !u!114 &321479432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321479422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82f0ff0b066849b499a294ef69ffc022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FlashLight
+  flashLightLight: {fileID: 1152605928}
+  playerCamera: {fileID: 330585545}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -1931,7 +1946,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1152605926
 Transform:
   m_ObjectHideFlags: 0
@@ -1985,9 +2000,9 @@ Light:
   m_GameObject: {fileID: 1152605925}
   m_Enabled: 1
   serializedVersion: 12
-  m_Type: 1
+  m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2
+  m_Intensity: 20
   m_Range: 25
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
