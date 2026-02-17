@@ -1,23 +1,25 @@
+using Unity.Jobs;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class WeaponScript : MonoBehaviour
 {
+    [Header("Required")]
     [SerializeField] private Transform shootPoint;
-    [SerializeField] private int magAmmo;
-    [SerializeField] private int currentMag;
-    [SerializeField] private int totalAmmo;
+
+    [Header("Bullet stats")]
     [SerializeField] private float bulletDamage;
     [SerializeField] private float bulletRange;
+
+    [Header("Ammo stats")]
+    [SerializeField] private int magAmmo;
+    [SerializeField] private int currentMag;
+    //[SerializeField] private int totalAmmo;
+    [Header("Cooldown times")]
     [SerializeField] private float reloadTime;
     [SerializeField] private float currentReload;
     [SerializeField] private float fireCooldown ;
     [SerializeField] private float currentCooldown;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -43,16 +45,31 @@ public class WeaponScript : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1") && currentCooldown == 0 && currentReload == 0)
         {
-            FireGun();
+            if (currentMag > 0)
+            {
+                FireGun();
+            }
+            else
+            {
+                currentReload = reloadTime;
+                currentMag = magAmmo;
+            }
         }
     }
 
     private void FireGun()
     {
         currentCooldown = fireCooldown;
+        currentMag--;
+
+        //Wat er gebeurt als je schiet
+
+        //animation
 
 
+        //ra+akt ie iets
+        shootPoint.transform.position = Vector3.zero;
+        //if (Physics.Raycast() )
     }
-
 
 }
