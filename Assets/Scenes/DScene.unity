@@ -6595,6 +6595,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GunS
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d5322d094edc02840ae6956f3ce39374, type: 3}
+      propertyPath: m_TagString
+      value: Item
+      objectReference: {fileID: 0}
     - target: {fileID: 2355982399387309400, guid: d5322d094edc02840ae6956f3ce39374, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -6619,6 +6623,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d5322d094edc02840ae6956f3ce39374, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1208791334}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d5322d094edc02840ae6956f3ce39374, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1208791335}
   m_SourcePrefab: {fileID: 100100000, guid: d5322d094edc02840ae6956f3ce39374, type: 3}
 --- !u!1 &1208791332 stripped
 GameObject:
@@ -6643,6 +6650,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Item
   prefabRefrence: {fileID: 199596009400136463, guid: 17765eb570a66374b8a6acc9a142ff6b, type: 3}
+--- !u!65 &1208791335
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1208791332}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1327301253
 GameObject:
   m_ObjectHideFlags: 0
@@ -6721,6 +6749,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInventory
   inventory: []
+  gunPrefab: {fileID: 199596009400136463, guid: 17765eb570a66374b8a6acc9a142ff6b, type: 3}
+  gunPlayer: {fileID: 5807088022900384637}
+  gunAdded: 0
 --- !u!54 &1327301257
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7168,13 +7199,14 @@ GameObject:
   - component: {fileID: 1558813741}
   - component: {fileID: 1558813743}
   - component: {fileID: 1558813742}
+  - component: {fileID: 1558813744}
   m_Layer: 0
   m_Name: FlashLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1558813741
 Transform:
   m_ObjectHideFlags: 0
@@ -7284,6 +7316,19 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &1558813744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558813740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82f0ff0b066849b499a294ef69ffc022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FlashLight
+  playerCamera: {fileID: 494473895}
 --- !u!1 &1650426633
 GameObject:
   m_ObjectHideFlags: 0
@@ -8007,7 +8052,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 199596009400136463, guid: 17765eb570a66374b8a6acc9a142ff6b, type: 3}
       propertyPath: m_Name
-      value: Gaen (1)
+      value: GaenP
+      objectReference: {fileID: 0}
+    - target: {fileID: 199596009400136463, guid: 17765eb570a66374b8a6acc9a142ff6b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 688711199186037173, guid: 17765eb570a66374b8a6acc9a142ff6b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8054,6 +8103,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17765eb570a66374b8a6acc9a142ff6b, type: 3}
+--- !u!1 &5807088022900384637 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 199596009400136463, guid: 17765eb570a66374b8a6acc9a142ff6b, type: 3}
+  m_PrefabInstance: {fileID: 5807088022900384636}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
