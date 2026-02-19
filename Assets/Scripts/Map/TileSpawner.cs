@@ -15,9 +15,9 @@ public class TileSpawner : MonoBehaviour
 
         Vector3 center = tileSpawnLocations[0].transform.position;
 
-        for (int x = -1; x <= 1; x++)
+        for (int x = -1; x <= gridWidth; x++)
         {
-            for (int z = -1; z <= 1; z++)
+            for (int z = -1; z <= gridHeight; z++)
             {
                 GameObject randomTile = tilesToSpawn[Random.Range(0, tilesToSpawn.Count)];
 

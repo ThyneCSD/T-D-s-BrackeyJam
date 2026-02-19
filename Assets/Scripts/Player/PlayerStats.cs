@@ -12,19 +12,26 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private float healthDepletionSpeed = 0.01f;
     [SerializeField] private Image healthImage;
     [SerializeField] private Image oxygenImage;
+    [SerializeField] private GameObject tape;
 
     private void Update()
     {
         //right here we do the oxygen down en als je geen meer heb dan ga je lowkey dood
-        oxygen -= oxygenDepletionSpeed;
+
+        if (tape != null)
+        {
+            oxygen -= oxygenDepletionSpeed;
+            if (oxygen != 0)
+            {
+                oxygen -= oxygenDepletionSpeed;
+            }
+        }
+
         if (oxygen <= 0)
         {
             health -= healthDepletionSpeed;
         }
-        if (oxygen != 0)
-        {
-            oxygen -= oxygenDepletionSpeed;
-        }
+
         UpdateHP();
         UpdateOxygen();
     }
