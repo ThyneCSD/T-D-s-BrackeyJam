@@ -9,6 +9,7 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private float oxygen = 100f;
     [SerializeField] private float maxOxygen = 100f;
     [SerializeField] private float oxygenDepletionSpeed = 0.01f;
+    [SerializeField] private float tapeOxygenDepletionSpeed = 0.01f;
     [SerializeField] private float healthDepletionSpeed = 0.01f;
     [SerializeField] private Image healthImage;
     [SerializeField] private Image oxygenImage;
@@ -20,11 +21,12 @@ public class PlayerStats : MonoBehaviour
 
         if (tape != null)
         {
+            oxygen -= tapeOxygenDepletionSpeed;
+        }
+
+        if (tape == null)
+        {
             oxygen -= oxygenDepletionSpeed;
-            if (oxygen != 0)
-            {
-                oxygen -= oxygenDepletionSpeed;
-            }
         }
 
         if (oxygen <= 0)
@@ -46,7 +48,7 @@ public class PlayerStats : MonoBehaviour
 
     private void UpdateOxygen()
     {
-        if (oxygenImage != null) { }
+        if (oxygenImage != null)
         {
             oxygenImage.fillAmount = (float)(oxygen / maxOxygen);
         }

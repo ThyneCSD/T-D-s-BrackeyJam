@@ -2121,6 +2121,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tape
       objectReference: {fileID: 0}
+    - target: {fileID: 837358655471890398, guid: 1c509b11d00a96740b4cf87f5bae9c3f, type: 3}
+      propertyPath: m_TagString
+      value: Item
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2131,6 +2135,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 837358655471890398, guid: 1c509b11d00a96740b4cf87f5bae9c3f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1247984796}
+    - targetCorrespondingSourceObject: {fileID: 837358655471890398, guid: 1c509b11d00a96740b4cf87f5bae9c3f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1247984799}
+    - targetCorrespondingSourceObject: {fileID: 837358655471890398, guid: 1c509b11d00a96740b4cf87f5bae9c3f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1247984798}
   m_SourcePrefab: {fileID: 100100000, guid: 1c509b11d00a96740b4cf87f5bae9c3f, type: 3}
 --- !u!4 &1247984795 stripped
 Transform:
@@ -2231,6 +2241,40 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &1247984798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198041756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 792f6487d5cce55468c898931896c177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Item
+  prefabRefrence: {fileID: 837358655471890398, guid: 1c509b11d00a96740b4cf87f5bae9c3f, type: 3}
+--- !u!65 &1247984799
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198041756}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1295563409
 GameObject:
   m_ObjectHideFlags: 0
@@ -2715,10 +2759,12 @@ MonoBehaviour:
   maxHealth: 100
   oxygen: 100
   maxOxygen: 100
-  oxygenDepletionSpeed: 0.1
-  healthDepletionSpeed: 0.01
+  oxygenDepletionSpeed: 0.01
+  tapeOxygenDepletionSpeed: 0.067
+  healthDepletionSpeed: 0.1
   healthImage: {fileID: 2028847819}
   oxygenImage: {fileID: 1580372017}
+  tape: {fileID: 1198041756}
 --- !u!65 &1446581819
 BoxCollider:
   m_ObjectHideFlags: 0
