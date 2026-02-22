@@ -6712,9 +6712,11 @@ MonoBehaviour:
   oxygen: 100
   maxOxygen: 100
   oxygenDepletionSpeed: 0.1
+  tapeOxygenDepletionSpeed: 0.01
   healthDepletionSpeed: 0.01
   healthImage: {fileID: 902468091}
   oxygenImage: {fileID: 1873707641}
+  tape: {fileID: 0}
 --- !u!65 &1327301255
 BoxCollider:
   m_ObjectHideFlags: 0

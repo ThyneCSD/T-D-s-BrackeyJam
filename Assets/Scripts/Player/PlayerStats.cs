@@ -36,6 +36,12 @@ public class PlayerStats : MonoBehaviour
 
         UpdateHP();
         UpdateOxygen();
+
+        if (health <= 0)
+        {
+            Application.Quit();
+        }
+
     }
 
     private void UpdateHP()
