@@ -3132,7 +3132,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 199596009400136463, guid: 17765eb570a66374b8a6acc9a142ff6b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1363990136}
   m_SourcePrefab: {fileID: 100100000, guid: 17765eb570a66374b8a6acc9a142ff6b, type: 3}
 --- !u!1 &1363990134 stripped
 GameObject:
@@ -3144,6 +3147,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 688711199186037173, guid: 17765eb570a66374b8a6acc9a142ff6b, type: 3}
   m_PrefabInstance: {fileID: 1363990133}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1363990136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363990134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0df56d819a757b049b9dc431b1e58f64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponScript
+  shootPoint: {fileID: 0}
+  bulletDamage: 1
+  bulletRange: 500
+  magAmmo: 12
+  currentMag: 12
+  reloadTime: 1
+  currentReload: 0
+  fireCooldown: 0.5
+  currentCooldown: 0
 --- !u!1 &1441690736
 GameObject:
   m_ObjectHideFlags: 0

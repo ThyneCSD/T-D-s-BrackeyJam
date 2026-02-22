@@ -1,6 +1,7 @@
 using Unity.Jobs;
 using Unity.VisualScripting;
 using UnityEngine;
+using System.Collections;
 
 public class WeaponScript : MonoBehaviour
 {
@@ -21,6 +22,9 @@ public class WeaponScript : MonoBehaviour
     [SerializeField] private float fireCooldown ;
     [SerializeField] private float currentCooldown;
 
+
+    private Vector3 originalPosition;
+
     // Update is called once per frame
     void Update()
     {
@@ -35,10 +39,12 @@ public class WeaponScript : MonoBehaviour
         if (currentReload > 0)
         {
             currentReload -= Time.deltaTime;
+            //rotate gun
         }
         else if (currentReload < 0)
         {
             currentReload = 0;
+            //rotate back
         }
 
 
@@ -59,17 +65,31 @@ public class WeaponScript : MonoBehaviour
 
     private void FireGun()
     {
+        Debug.Log("Firing Gun");
         currentCooldown = fireCooldown;
         currentMag--;
 
         //Wat er gebeurt als je schiet
 
         //animation
+        //originalPosition = transform.position;
+        //transform.position = new Vector3(1,2,1);
+        StartCoroutine(AnimationRoutine());
+
+
 
 
         //ra+akt ie iets
-        shootPoint.transform.position = Vector3.zero;
+        //shootPoint.transform.position = Vector3.zero;
         //if (Physics.Raycast() )
     }
 
+    IEnumerator AnimationRoutine()
+    {
+        Debug.Log("Gun Animation");
+        originalPosition = transform.position;
+        transform.position = new Vector3(1, 1, 1);
+        yield return new WaitForSeconds(0.3f);
+        transform.position = originalPosition;
+    }
 }
